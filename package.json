@@ -1,5 +1,14 @@
 {
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "Generates a readme file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edward Becerra",
+  "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.12"
+    "inquirer": "^6.5.2"
   }
 }
