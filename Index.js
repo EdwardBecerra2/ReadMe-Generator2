@@ -19,6 +19,52 @@ const questions = [
             }
         }
     },
+
+     // QUESTIONS EMAIL
+     {
+        type: 'input',
+        name: 'questionsEmail',
+        message: 'Enter an email users can reach out to if they have questions. (Required)',
+        validate: questionsEmailInput => {
+            if (questionsEmailInput) {
+            return true;
+            } else {
+            console.log('Please enter an email!');
+            return false;
+            }
+    }
+    },    
+    
+        // PROJECT TITLE
+    {
+    type: 'input',
+    name: 'projectTitle',
+    message: 'What is the title of your project? (Required)',
+    validate: projectTitleInput => {
+        if (projectTitleInput) {
+        return true;
+        } else {
+        console.log('Please enter the title of your project!');
+        return false;
+        }
+    }
+    },
+
+     // PROJECT DESCRIPTION - INPUT
+     {
+        type: 'input',
+        name: 'description',
+        message: 'Provide a description of the project (Required)',
+        validate: descriptionInput => {
+          if (descriptionInput) {
+            return true;
+          } else {
+            console.log('You need to enter a project description!');
+            return false;
+          }
+    }
+    },
+
 ];
 
 // TODO: Create a function to write README file
