@@ -26,6 +26,7 @@
     You can test this project with your own dummy data.
 
   ### Demo 
+  [video](https://www.redcoolmedia.net/videoonlineconverter/videos/1706043976_Screen%20Recording%202024-01-23%20at%2011.01.27%E2%80%AFAM.mp4)
 
   ## Questions
   Reach out to the repo owner, [EdwardBecerra2](https://github.com/EdwardBecerra2) at edwardbecerra1207@gmail.com.
