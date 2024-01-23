@@ -10,28 +10,63 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  let linkUrl = license.tolowercase().replace(" ", "-");
+  let linkUrl = license.toLowerCase().replace(" ", "-");
   return `https://choosealicense.com/licenses/${linkUrl}/.`
-}
+};
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+
   if (license === "None") {
     return "";
   } else {
-    return ` 
-    ### Licensing 
-    ${license} 
-    ${renderLicenseBadge(license)}`
-  }
+
+    return `
+  ### Licensing 
+  ${license}
+  ${renderLicenseBadge(license)}
+  `
+}
 };
+
+  // Creates a section for Links to a Live Site
+function renderLinkSection(siteLink) {
+
+  if (!siteLink) {
+    return "";
+  } else {
+
+    return `
+  ### Live Site 
+  [Click to see the live site!](${siteLink})
+  `
+}
+};
+
+  // Creates a section for embedding a video or gif for a Demo
+function renderDemo(demoLink) {
+
+  if (!demoLink) {
+    return "";
+  } else {
+
+    return `
+  ### Demo 
+  ![Demo](${demoLink})
+  `
+}
+};
+
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  //console.log(data)
-  const { github, badgeLabel, linkUrl, ...info} = data;
-  return `# ${data.title}
+  // console.log(data)
+  const { github, licenseChoice, confirmLiveLink, liveSiteLink, siteDemoLink, ...info } = data;
+
+  return `
+  # ${info.projectTitle}
 
   ## Table of Contents
   - [Description](#project-description)
@@ -41,11 +76,12 @@ function generateMarkdown(data) {
   - [Testing](#testing)
   - [Questions](#questions)
 
+
   ## Project Description
   ${info.description}
-  ${renderLicenseBadge(badgeLabel)} 
-  ${renderLicenseLink(linkUrl)}
-  ${renderLicenseSection()}
+  ${renderLicenseSection(licenseChoice)} 
+  ${renderLinkSection(liveSiteLink)}
+  ${renderDemo(siteDemoLink)}
 
   ## Installation 
   ${info.installationInstructions}
@@ -61,7 +97,9 @@ function generateMarkdown(data) {
 
   ## Questions
   Reach out to the repo owner, [${github}](https://github.com/${github}) at ${info.questionsEmail}.
-`;
+  `;
 }
 
 module.exports = generateMarkdown;
+
+
